@@ -10,6 +10,13 @@ export default {
   theme: {
   	extend: {
   		colors: {
+			custom: {
+					"bk-blue-100":'#362e54 ',
+					"bk-blue-200":'#5a5183',
+					"bk-blue-300":'#868ebb',
+					"bk-beige-100":'#7a7143',
+					"bk-beige-200":'#ac9e74',
+			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
