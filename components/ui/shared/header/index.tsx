@@ -2,6 +2,7 @@ import { ShoppingCart, UserIcon } from 'lucide-react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../../button';
+import ModeToggle from './mode-toggle';
 
 const Header = () => {
     return (
@@ -19,7 +20,8 @@ const Header = () => {
             </Link>
           </div>
           <div className="text-custom-bk-blue-200">
-            <div className="flex flex-end">
+            <div className="flex flex-end items-center">
+              <ModeToggle />
               <Button
                 asChild
                 variant="ghost"
