@@ -1,8 +1,7 @@
-import { ShoppingCart, UserIcon } from 'lucide-react'
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '../../button';
-import ModeToggle from './mode-toggle';
+
+import Menu from './menu';
 
 const Header = () => {
     return (
@@ -20,27 +19,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="text-custom-bk-blue-200">
-            <div className="flex flex-end items-center">
-              <ModeToggle />
-              <Button
-                asChild
-                variant="ghost"
-                className="hover:bg-transparent hover:text-custom-bk-blue-100 "
-              >
-                <Link href="/cart">
-                  <ShoppingCart size={24} /> Cart
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="ghost"
-                className="hover:bg-transparent hover:text-custom-bk-blue-100"
-              >
-                <Link href="/sign-in">
-                  <UserIcon size={24} /> Sign In
-                </Link>
-              </Button>
-            </div>
+            <Menu />
           </div>
         </div>
       </header>
