@@ -1,8 +1,8 @@
 'use client'
 
 import { useTheme } from "next-themes";
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../../dropdown-menu";
-import { Button } from "../../button";
+import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../../ui/dropdown-menu";
+import { Button } from "../../ui/button";
 import { MoonIcon, SunIcon, SunMoon } from "lucide-react";
 
 const ModeToggle = () => {

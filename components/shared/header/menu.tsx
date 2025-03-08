@@ -1,8 +1,8 @@
 import { EllipsisVertical, ShoppingCart, UserIcon } from "lucide-react";
 import Link from "next/link";
-import { Button } from "../../button";
+import { Button } from "../../ui/button";
 import ModeToggle from "./mode-toggle";
-import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "../../sheet";
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "../../ui/sheet";
 
 const Menu = () => {
     return (
