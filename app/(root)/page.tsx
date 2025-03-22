@@ -3,7 +3,7 @@ import sampleData from "@/db/sample-data";
 
 const HomePage = () => {
   return ( <>
-  <ProductList title="new" data={sampleData.products}/>
+  <ProductList title="" data={sampleData.products}/>
   </> );
 }
  
