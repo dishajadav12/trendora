@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card, CardHeader } from "@/components/ui/card";
 import ProductPrice from "./product-price";
-import { Product } from "@/lib/common";
+import { Product } from "@/types";
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
