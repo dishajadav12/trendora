@@ -31,28 +31,31 @@ const UserButton = async () => {
               </Button>
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56" align="end" forceMount>
+          <DropdownMenuContent
+            className="w-56 space-y-4"
+            align="end"
+            forceMount
+          >
             <DropdownMenuLabel>
-              <div className="flex flex-col space-y-1">
+              <div className="flex flex-col space-y-2">
                 <div className="text-sm font-medium leading-none">
                   {session.user?.name}
                 </div>
-              </div>
-              <div className="flex flex-col space-y-1">
-                <div className="text-sm text-muted-foreground leading-none">
+                <div className="text-xs text-muted-foreground leading-none">
                   {session.user?.email}
                 </div>
               </div>
             </DropdownMenuLabel>
-        <DropdownMenuItem>
-          <form action={signOutUser} className="w-full" >
-            <Button className="w-full py-4 px-2 h-4 justify-start" variant={"ghost"} >
-              Sign Out
-
-            </Button>
-
-          </form>
-        </DropdownMenuItem>
+            <DropdownMenuItem>
+              <form action={signOutUser} className="w-full">
+                <Button
+                  className="w-full py-4 px-2 h-4 justify-start"
+                  variant={"ghost"}
+                >
+                  Sign Out
+                </Button>
+              </form>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
