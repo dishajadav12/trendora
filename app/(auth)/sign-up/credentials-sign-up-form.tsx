@@ -82,7 +82,7 @@ const SignUpForm = () => {
         )}
         <div className="text-xs text-center text-muted-foreground">
           Already have an account?{" "}
-          <Link href="/sign-ip" target="_self" className="link">
+          <Link href="/sign-in" target="_self" className="link">
             Sign In
           </Link>
         </div>

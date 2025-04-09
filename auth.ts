@@ -23,6 +23,7 @@ export const config = {
                 email:{type: 'email'},
                 password: {type: 'password'},
             },
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             async authorize(credentials: any) {
                 if (!credentials) return null;
 
@@ -49,23 +50,35 @@ export const config = {
         })
     ],
    callbacks: {
-        async session({ session, token, user, trigger }: { 
-            session: any; 
-            token: { sub?: string }; 
-            user: any; 
-            trigger?: string; 
-        }) {
+       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        async session({ session, token, user, trigger }: any) {
             if (token.sub) {
-                session.user = session.user || {};
                 session.user.id = token.sub;
+                session.user.role = token.role;
+                session.user.name = token.name;
             }
-
+console.log('token', token)
             if (trigger === 'update' && user?.name) {
                 session.user.name = user.name;
             }
 
             return session;
         },
+       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        async jwt({token, user, trigger, session} : any) {
+            if (user) {
+                token.role = user.role;
+
+                if (user.name === 'NO_NAME'){
+                    token.name = user.email!.split('@')[0];
+                    await prisma.user.update({
+                        where: {id: user.id},
+                        data: {name: token.name}
+                    });
+                }
+            }
+            return token;
+        }
     }
 } satisfies NextAuthConfig;
 
